@@ -5,3 +5,8 @@ body {
 *{
     font-family: Arial;
 }
+
+img {
+    width: 500px;
+    border: 10px solid black;
+}
