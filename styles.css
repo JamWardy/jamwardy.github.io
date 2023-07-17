@@ -1,0 +1,160 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Nunito Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #353535;
+    color: #5497A7;
+  }
+  
+  header {
+    background-color: #5497A7;
+    padding: 20px;
+  }
+
+  #container {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+  }
+  
+  #home {
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    height: 70vh;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out forwards;
+  }
+
+  #home img {
+    border-radius: 25px;
+    width: 300px;
+    height: 300px;
+  }
+
+  #home-text {
+    padding: 50px;
+    display: flex; 
+    flex-direction: column;
+  }
+
+  #home h1, #home p {
+    margin: 0;
+    width: 45vw;
+  }
+
+  #home h1 {
+    font-size: 50px;
+  }
+
+  #home p {
+    font-size: 30px;
+  }
+
+  #about {
+    width: 80vw;
+  }
+
+  #about img {
+    height: 8vw;
+    padding: 5px;
+  }
+
+  .logo-container {
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 3s steps(40) forwards;
+  }
+  
+  /* Optional blinking cursor animation */
+  @keyframes blink {
+    0%, 100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  .blinking-cursor {
+    display: inline-block;
+    margin-left: 3px;
+    width: 2px;
+    height: 50px;
+    background-color: #5497A7;
+    animation: blink 1s infinite;
+  }
+  
+
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+  }
+  
+  nav ul li a {
+    color: #353535;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+  
+  section {
+    padding: 40px;
+  }
+  
+  section h2 {
+    margin-bottom: 20px;
+  }
+  
+  .project {
+    margin-bottom: 40px;
+  }
+  
+  .project img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+  
+  footer {
+    background-color: #353535;
+    color: #5497A7;
+    padding: 20px;
+    text-align: center;
+  }
+  
