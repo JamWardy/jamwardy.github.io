@@ -58,7 +58,8 @@ header {
 }
 
 #about,
-#experience {
+#experience, 
+#projects {
   width: 80vw;
 }
 
@@ -67,13 +68,18 @@ header {
   padding: 5px;
 }
 
-#experience ul{
+#container ul{
   list-style-type: square ;
 }
 
 .xDesign img {
   height: 25vw;
   padding: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: #5497A7;
 }
 
 .logo-container {
@@ -187,7 +193,8 @@ footer {
   }
 
   #about,
-  #experience {
+  #experience,
+  #projects {
     width: 90vw; /* Increase width for smaller screens */
   }
 
