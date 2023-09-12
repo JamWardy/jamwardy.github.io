@@ -71,8 +71,8 @@ header {
   list-style-type: square ;
 }
 
-#experience img {
-  height: 25vw !important;
+.xDesign img {
+  height: 25vw;
   padding: 5px;
 }
 
