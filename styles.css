@@ -72,7 +72,7 @@ header {
 }
 
 #experience img {
-  height: 25vw;
+  height: 25vw !important;
   padding: 5px;
 }
 
