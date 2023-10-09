@@ -72,9 +72,11 @@ header {
   list-style-type: square ;
 }
 
-.xDesign img {
+.xDesign img, .drone img {
   height: 25vw;
   padding: 5px;
+  display: block;
+  margin-left: 5%;
 }
 
 a {
@@ -200,5 +202,80 @@ footer {
 
   #about img {
     height: 6vw; /* Adjust image size for smaller screens */
+  }
+}
+
+#experience div {
+  /* background-color: #bfb1c1;  */
+  /* Grey background color */
+  padding: 20px; /* Add some padding around the content */
+  border-radius: 10px; /* Rounded corners for the box */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  margin: 20px;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 16px; /* Adjust font size for smaller screens */
+  }
+
+  header {
+    padding: 10px; /* Reduce header padding for smaller screens */
+  }
+
+  #home {
+    height: 50vh; /* Reduce the height of the home section for smaller screens */
+  }
+
+  #home img {
+    width: 150px; /* Adjust image size for smaller screens */
+    height: 150px;
+  }
+
+  #home h1 {
+    font-size: 28px; /* Adjust heading size for smaller screens */
+  }
+
+  #home p {
+    font-size: 18px; /* Adjust paragraph size for smaller screens */
+  }
+
+  #about,
+  #experience,
+  #projects {
+    width: 90vw; /* Increase width for smaller screens */
+    padding: 10px; /* Add some padding for smaller screens */
+  }
+
+  #about img {
+    height: 4vw; /* Adjust image size for smaller screens */
+  }
+
+  .xDesign img,
+  .drone img {
+    height: 15vw; /* Adjust image size for smaller screens */
+    margin-left: 0; /* Remove margin for smaller screens */
+  }
+
+  section {
+    padding: 20px; /* Increase padding for smaller screens */
+  }
+
+  section h2 {
+    font-size: 24px; /* Adjust heading size for smaller screens */
+  }
+
+  .project {
+    margin-bottom: 20px; /* Reduce margin for smaller screens */
+  }
+
+  .project img {
+    max-width: 100%; /* Allow images to adjust to the screen width */
+    height: auto;
+  }
+
+  footer {
+    padding: 10px; /* Reduce footer padding for smaller screens */
   }
 }
