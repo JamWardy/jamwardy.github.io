@@ -176,14 +176,24 @@ footer {
 }
 
 /* Mobile Styles */
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   body {
     font-size: 16px; /* Adjust font size for smaller screens */
   }
 
+  #home {
+    display: flex;
+    flex-direction: column; /* Reverses the stack order so image is on top */
+    width: 100%;
+  }
+
+  #home-text {
+    text-align: center; /* Centers the text for smaller screens */
+  }
+
   #home img {
-    width: 200px; /* Adjust image size for smaller screens */
-    height: 200px;
+    width: 100%; /* Adjust image size for smaller screens */
+    height: auto;
   }
 
   #home h1 {
