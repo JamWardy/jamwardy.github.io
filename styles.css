@@ -176,7 +176,7 @@ footer {
 }
 
 /* Mobile Styles */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   body {
     font-size: 16px; /* Adjust font size for smaller screens */
   }
@@ -202,6 +202,7 @@ footer {
 
   #home p {
     font-size: 24px; /* Adjust paragraph size for smaller screens */
+    align-items: center;
   }
 
   #about,
