@@ -45,16 +45,19 @@ header {
 
 #home h1,
 #home p {
-  margin: 0;
   width: 45vw;
 }
 
-#home h1 {
-  font-size: 50px;
+#home p {
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
+  color: rgb(191 177 193);
+  margin: 0 0 1.5rem;
 }
 
-#home p {
-  font-size: 30px;
+#home h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.1;
+  margin: 0 0 1rem;
 }
 
 #about,
@@ -72,11 +75,13 @@ header {
   list-style-type: square ;
 }
 
+/* project/experience images inside cards */
 .xDesign img, .drone img {
-  height: 25vw;
-  padding: 5px;
+  width: 100%;
+  height: auto;
+  padding: 5px 0;
   display: block;
-  margin-left: 5%;
+  margin-left: 0;
 }
 
 a {
@@ -88,8 +93,11 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
+/* typing + fade animations (unchanged) */
 @keyframes typing {
   from {
     width: 0;
@@ -175,6 +183,69 @@ footer {
   text-align: center;
 }
 
+/* Grid layout: max 2 cards per row */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+}
+
+/* Utility columns */
+.grid .col-4 { grid-column: span 4; }
+.grid .col-6 { grid-column: span 6; }  /* 2 per row on large screens */
+.grid .col-12 { grid-column: span 12; }
+
+/* Breakpoints: 2 per row down to 900px, then 1 per row below 640px */
+@media (max-width: 900px) {
+  .grid .col-4,
+  .grid .col-6 {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid .col-4,
+  .grid .col-6 {
+    grid-column: span 12; /* one per row on small screens */
+  }
+}
+
+/* Card styling – keeps your colour scheme */
+.card {
+  background: rgb(45, 45, 45);
+  border: 1px solid rgb(80, 80, 80);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.card h3 {
+  margin: .2rem 0 .4rem;
+  font-size: 1.1rem;
+}
+
+.card li, .card p{
+  color: rgb(191 177 193);
+}
+
+.card .thumb {
+  aspect-ratio: 16/16;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Make project images inside cards behave nicely */
+.xDesign img,
+.drone img {
+  width: 100%;
+  height: auto;
+  padding: 5px 0;
+  display: block;
+  margin-left: 0;
+}
+
+img { max-width: 100%; display: block; }
+
 /* Mobile Styles */
 @media screen and (max-width: 768px) {
   body {
@@ -183,7 +254,7 @@ footer {
 
   #home {
     display: flex;
-    flex-direction: column; /* Reverses the stack order so image is on top */
+    flex-direction: column; /* image on top, text below */
     width: 100%;
   }
 
@@ -198,10 +269,12 @@ footer {
 
   #home h1 {
     font-size: 36px; /* Adjust heading size for smaller screens */
+    width: 100%;
   }
 
   #home p {
     font-size: 24px; /* Adjust paragraph size for smaller screens */
+    width: 100%;
     align-items: center;
   }
 
@@ -216,16 +289,8 @@ footer {
   }
 }
 
-#experience div {
-  /* background-color: #bfb1c1;  */
-  /* Grey background color */
-  padding: 20px; /* Add some padding around the content */
-  border-radius: 10px; /* Rounded corners for the box */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
-  margin: 20px;
-}
-
-/* Mobile Styles */
+/* replaced the generic #experience div rule with specific card styling above */
+/* Mobile Styles - second block kept, but adjusted slightly where needed */
 @media screen and (max-width: 768px) {
   body {
     font-size: 16px; /* Adjust font size for smaller screens */
@@ -267,7 +332,7 @@ footer {
 
   .xDesign img,
   .drone img {
-    height: 15vw; /* Adjust image size for smaller screens */
+    height: auto; /* Let images scale naturally */
     margin-left: 0; /* Remove margin for smaller screens */
   }
 
