@@ -289,6 +289,24 @@ img { max-width: 100%; display: block; }
   }
 }
 
+.icon-inline {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 6px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.icon-inline svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.icon-inline:hover {
+  opacity: 0.75;
+}
+
 /* replaced the generic #experience div rule with specific card styling above */
 /* Mobile Styles - second block kept, but adjusted slightly where needed */
 @media screen and (max-width: 768px) {
