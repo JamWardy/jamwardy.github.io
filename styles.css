@@ -15,6 +15,14 @@ header {
   padding: 20px;
 }
 
+.nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 #container {
   display: flex;
   flex-direction: column;
@@ -143,20 +151,74 @@ a {
   animation: blink 1s infinite;
 }
 
-nav ul {
+.nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand (left) */
+.nav-brand a {
+  color: #353535;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Links container */
+.nav-links {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  gap: 10px;
 }
 
-nav ul li {
-  display: inline;
-}
-
-nav ul li a {
+.nav-links li a {
   color: #353535;
   text-decoration: none;
-  margin-right: 10px;
+  margin-right: 0;          /* we’ll use gap instead of margin */
+}
+
+.nav-links li a:hover {
+  opacity: 0.7;
+}
+
+/* Hamburger button (hidden on desktop) */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* 3 bars */
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: #353535;
+  border-radius: 999px;
+  margin: 4px 0;
+}
+
+/* GitHub icon in header */
+.github-icon {
+  display: inline-block;
+  /* vertical-align: middle; */
+  color: #353535;
+  text-decoration: none;
+}
+
+.github-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  vertical-align: middle;
+  margin-left: 6px;  /* gap between “GitHub” and logo text if you add text */
+  transform: translateY(-2px);
 }
 
 section {
@@ -252,6 +314,12 @@ img { max-width: 100%; display: block; }
     font-size: 16px; /* Adjust font size for smaller screens */
   }
 
+  header {
+    padding: 10px;
+    position: relative;
+    z-index: 1000;
+  }
+  
   #home {
     display: flex;
     flex-direction: column; /* image on top, text below */
@@ -286,6 +354,63 @@ img { max-width: 100%; display: block; }
 
   #about img {
     height: 6vw; /* Adjust image size for smaller screens */
+  }
+
+  /* Show hamburger */
+  .nav-toggle {
+    display: inline-block;
+  }
+
+  /* Stack brand + toggle at top, hide links initially */
+  .nav {
+    max-width: 100%;          /* remove the 1100px limit */
+    margin: 0; 
+    position: relative;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;              /* just under the header bar */
+    left: 50%;              /* center relative to viewport */
+    transform: translateX(-50%);
+    width: 100vw;           /* span entire viewport width */
+    background-color: #5497A7;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 12px 10px 40px;
+    gap: 16px;
+    display: none;      /* hidden by default */
+    z-index: 1001; 
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links li a,
+  .nav-links .github-icon {
+    color: #353535;
+  }
+
+  /* When menu is open */
+  .nav-links.open {
+    display: flex;
+  }
+
+  .typewriter-container {
+    text-align: center;           /* centers child element */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Typewriter text */
+  .typewriter {
+    display: inline-block;        /* needed for margin auto to work */
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0 auto;               /* keeps it centered */
+    animation: typing 3s steps(40) forwards;
   }
 }
 
